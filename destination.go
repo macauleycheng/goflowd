@@ -97,7 +97,7 @@ func (destination *Destination) exportIPFIX(flow Flow, odId uint32, cache Cache)
 			destination.BaseTime, cache)
 		destination.UsedBufferSize += uint32(cache.dataRecordSize)
 	}
-	if destination.UsedBufferSize+uint32(cache.dataRecordSize) > destination.BufferSize {
+	if destination.UsedBufferSize > destination.BufferSize {
 		dataSetLength := uint16(destination.UsedBufferSize - destination.DataSetStartPosition)
 		flowCount := (dataSetLength - 4) / cache.dataRecordSize
 		binary.BigEndian.PutUint16(destination.buffer[destination.DataSetStartPosition+2:],
