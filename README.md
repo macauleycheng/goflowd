@@ -7,8 +7,12 @@ It is written by golang.  goflowd uses
 standarized in [RFC6728](https://tools.ietf.org/html/rfc6728) data
 model for configuration. The yang model configuraiton is acheived by using [openconfig/ygot](https://github.com/openconfig/ygot).
 
+## Build code
+go build
+
 ## Execution
-    ./goflowd -c config.json
+    ./goflowd -config config.json
+
 
 ## Configuration sample
 Configuration file is json based.
