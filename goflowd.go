@@ -3,10 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
+	"os"
+
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
-	"io/ioutil"
-	"log"
 )
 
 func main() {
@@ -14,7 +15,7 @@ func main() {
 	config := flag.String("config", "", "configuration file")
 	flag.Parse()
 
-	jsonString, err := ioutil.ReadFile(*config)
+	jsonString, err := os.ReadFile(*config)
 	if err != nil {
 		log.Fatal("Read file: ", err)
 	}

@@ -2,19 +2,20 @@ package main
 
 import (
 	"fmt"
-	"github.com/google/gopacket/pcap"
-	"github.com/google/gopacket/pcapgo"
 	"log"
 	"net"
 	"os"
 	"sort"
 	"time"
+
+	"github.com/google/gopacket/pcap"
+	"github.com/google/gopacket/pcapgo"
 )
 
 const (
 	defaultMaxFlows          = 65536
 	defaultSnapLength        = 1518
-	exportBufferSize         = 1472
+	exportBufferSize         = 1416
 	defaultFlowActiveTimeout = 1800
 	defaultFlowIdleTimeout   = 15
 )
